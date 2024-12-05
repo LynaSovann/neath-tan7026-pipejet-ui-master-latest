@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: neath-tan7026-pipejet-ui-master-latest-certificate
+  namespace: neath-tan7026-pipejet-ui-master-latest
+spec:
+  secretName: neath-tan7026-pipejet-ui-master-latest-secret-tls
+  commonName: pipejet.kshrd.app
+  dnsNames:
+  - pipejet.kshrd.app
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

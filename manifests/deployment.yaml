@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neath-tan7026-pipejet-ui-master-latest-deployment
+  labels:
+    app: neath-tan7026-pipejet-ui-master-latest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neath-tan7026-pipejet-ui-master-latest
+  template:
+    metadata:
+      labels:
+        app: neath-tan7026-pipejet-ui-master-latest
+    spec:
+      containers:
+        - name: neath-tan7026-pipejet-ui-master-latest-container
+          image: pipejet/neath-tan7026-pipejet-ui-master-latest:0
+          ports:
+            - containerPort: 3000

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: neath-tan7026-pipejet-ui-master-latest-service
+spec:
+  type: NodePort
+  selector:
+    app: neath-tan7026-pipejet-ui-master-latest
+  ports:
+    - protocol: TCP
+      port: 8337
+      targetPort: 3000

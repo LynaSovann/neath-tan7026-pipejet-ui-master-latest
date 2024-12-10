@@ -19,22 +19,6 @@ spec:
           image: pipejet/neath-tan7026-pipejet-ui-master-latest:13
           ports:
             - containerPort: 3000
-          env:
-            - name: NEXTAUTH_URL
-              value: "https://pipejet.kshrd.app"
-            - name: NEXTAUTH_SECRET
-              value: "Boubi21r06MDjJ3kMnQcJqOyKV6IWvLo2ortX88Pxvs="
-            - name: API_URL
-              value: "https://pipe-jet7960-apivvv.assessify.org/api/v1"
-            - name: NEXT_PUBLIC_DOMAIN
-              value: "assessify.org"
-            - name: NEXT_PUBLIC_CLUSTER_IP
-              value: "157.230.194.66"
-            - name: GOOGLE_CLIENT_ID
-              value: "596296979776-et6e7m3ska6mcbfg7ib5kicv3qbqaalj.apps.googleusercontent.com"
-            - name: GOOGLE_CLIENT_SECRET
-              value: "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"
-            - name: GITHUB_CLIENT_ID
-              value: "Ov23li3iw5GBIZQUNg62"
-            - name: GITHUB_CLIENT_SECRET
-              value: "015b85569f1121c9893dc08ebae84fc20fe7e428"
+          envFrom:
+            - secretRef:
+                name: nextauth-secrets
